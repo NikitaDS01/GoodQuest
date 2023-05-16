@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 47, in script call
+    menu:
+  File "game/init.rpy", line 26, in script
+    label reason_up(summa):
+TypeError: Missing required positional arguments: 'summa'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 47, in script call
+    menu:
+  File "game/init.rpy", line 26, in script
+    label reason_up(summa):
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 1072, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 294, in apply_arguments
+    return parameters.apply(args, kwargs, ignore_errors)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 230, in apply
+    raise TypeError(
+TypeError: Missing required positional arguments: 'summa'
+
+Windows-10-10.0.22621 AMD64
+Ren'Py 8.0.3.22090809
+TestProject 1.0
+Tue May 16 11:23:07 2023
