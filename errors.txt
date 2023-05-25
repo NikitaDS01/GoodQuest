@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/init.rpy", line 19: end of line expected.
-    hide screen phone_button()
-                            ^
+File "game/code_python.rpy", line 5: expected an indented block
+        self._m1_code_python__items = []
+         ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon May 15 15:41:38 2023
+Fri May 26 01:15:20 2023
