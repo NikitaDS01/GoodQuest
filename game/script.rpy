@@ -9,10 +9,15 @@
 init:
     $ topLeft = Position(xalign=0.2, yalign=1.5) 
     $ topright = Position(xalign=1.2, yalign=1.5) 
+    $ inventory = Inventory()
     
 
 label start:
     show bg cellar
+    "Дисклеймер" '''
+    В игре много всякой хуйни, много матов и многого другого. {w=3}
+    Поэтому акуратнее :D
+    '''
 
     unfamiliar '''
     *Идёт на физ-ру*
@@ -27,11 +32,11 @@ label start:
     hide bg
     with fade 
 
-    jump hero_roon
+    jump hero_room
 
     return    
 
-label hero_roon:
+label hero_room:
     scene bg herous_room
 
     hero '''
@@ -48,10 +53,9 @@ label hero_roon:
         "Проебать пары":
             jump died
         "Пойти на пары":
-            hero "*Выходит из свой комнаты*"
             jump run_school
         "Ждать друга":
-            hero "Буду этого пиздюка ждать"
+            jump backrooms
         
     return
 
@@ -70,6 +74,7 @@ label died:
     return
 
 label run_school:
+    hero "*Выходит из свой комнаты*"
     show bg school_rain:
         zoom 2.0
     hero '''
@@ -84,3 +89,10 @@ label run_school:
     jump run_school
     return
 
+label backrooms:
+    hero "Буду этого пиздюка ждать"
+    play music backrooms
+    scene bg backrooms:
+        zoom 2.0
+    call disable_panel
+    hero "Где я?"

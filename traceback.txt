@@ -1,28 +1,64 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 47, in script call
-    menu:
-  File "game/init.rpy", line 26, in script
-    label reason_up(summa):
-TypeError: Missing required positional arguments: 'summa'
+  File "game/script.rpy", line 80, in script
+    hero '''
+  File "renpy/common/00action_other.rpy", line 578, in __call__
+    rv = self.callable(*self.args, **self.kwargs)
+  File "game/code_python.rpy", line 4, in reason_up
+    if(reason+summa <= 100):
+UnboundLocalError: local variable 'reason' referenced before assignment
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 47, in script call
-    menu:
-  File "game/init.rpy", line 26, in script
-    label reason_up(summa):
-  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 1072, in execute
-    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
-  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 294, in apply_arguments
-    return parameters.apply(args, kwargs, ignore_errors)
-  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 230, in apply
-    raise TypeError(
-TypeError: Missing required positional arguments: 'summa'
+  File "game/script.rpy", line 80, in script
+    hero '''
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\character.py", line 1266, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\character.py", line 927, in do_display
+    display_say(who,
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\character.py", line 666, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\core.py", line 4258, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1175, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1175, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1175, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\screen.py", line 743, in event
+    rv = self.child.event(ev, x, y, st)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1175, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1399, in event
+    rv = super(Window, self).event(ev, x, y, st)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 279, in event
+    rv = d.event(ev, x - xo, y - yo, st)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\layout.py", line 1175, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\behavior.py", line 1073, in event
+    return handle_click(self.clicked)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\behavior.py", line 1008, in handle_click
+    rv = run(action)
+  File "E:\Renpy\renpy-8.0.3-sdk\renpy\display\behavior.py", line 329, in run
+    return action(*args, **kwargs)
+  File "renpy/common/00action_other.rpy", line 578, in __call__
+    rv = self.callable(*self.args, **self.kwargs)
+  File "game/code_python.rpy", line 4, in reason_up
+    if(reason+summa <= 100):
+UnboundLocalError: local variable 'reason' referenced before assignment
 
 Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 TestProject 1.0
-Tue May 16 11:23:07 2023
+Wed May 31 22:32:30 2023

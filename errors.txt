@@ -2,10 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/code_python.rpy", line 5: expected an indented block
-        self._m1_code_python__items = []
-         ^
+File "game/code_python.rpy", line 5: invalid syntax
+                $ reason += summa
+                 ^
     
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri May 26 01:15:20 2023
+Wed May 31 22:29:20 2023

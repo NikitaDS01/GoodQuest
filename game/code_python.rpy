@@ -1,8 +1,24 @@
 init python:
+    def reason_up(summa = 15):
+        global medicine_count
+        global reason
+        if(medicine_count > 0):
+            if(reason+summa <= 100):
+                reason += summa
+                medicine_count -= 1
+                renpy.notify("Ваш рассудок немного повысился")
+            else:
+                renpy.notify("Вы чувствуете себя прекрасно")
+        else:
+            renpy.notify("У вас закончились таблетки")
+
     class Item:
-        def __init__(self, name):
+        def __init__(self, name, description, item_image = None, item_image_active=None):
             # Название предмета
             self.name = name
+            self.description = description
+            self.image = item_image
+            self.image_active = item_image_active
     
     class Inventory:
         def __init__(self):        
@@ -40,8 +56,8 @@ init python:
 
     class CollectionItem:
         # Коллекция всех возможных предметов
-        __collectionItem = {"Ручка": Item("Ручка"),
-                            "Тетрадь": Item("Тетрадь")}
+        __collectionItem = {"Ручка": Item("Ручка", "Простая ручка."),
+                            "Тетрадь": Item("Тетрадь", "Тетрадь по математике.")}
         
         # Для получения предмета по названию
         @staticmethod
